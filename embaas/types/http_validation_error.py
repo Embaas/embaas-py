@@ -10,7 +10,7 @@ from ..core.datetime_utils import serialize_datetime
 
 
 class HttpValidationError(pydantic.BaseModel):
-    detail: typing.Optional[typing.List[ValidationError]]
+    detail: typing.Optional[typing.List[ValidationError]] = None
 
     def json(self, **kwargs: typing.Any) -> str:
         kwargs_with_defaults: typing.Any = {"by_alias": True, "exclude_unset": True, **kwargs}

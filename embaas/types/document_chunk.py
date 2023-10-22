@@ -11,7 +11,7 @@ from ..core.datetime_utils import serialize_datetime
 class DocumentChunk(pydantic.BaseModel):
     text: str
     metadata: typing.Dict[str, typing.Any]
-    embedding: typing.Optional[typing.List[float]]
+    embedding: typing.Optional[typing.List[float]] = None
     index: int
 
     def json(self, **kwargs: typing.Any) -> str:

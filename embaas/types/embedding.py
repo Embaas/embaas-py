@@ -11,7 +11,7 @@ from ..core.datetime_utils import serialize_datetime
 class Embedding(pydantic.BaseModel):
     embedding: typing.List[float]
     index: int
-    was_truncated: typing.Optional[bool]
+    was_truncated: typing.Optional[bool] = None
 
     def json(self, **kwargs: typing.Any) -> str:
         kwargs_with_defaults: typing.Any = {"by_alias": True, "exclude_unset": True, **kwargs}

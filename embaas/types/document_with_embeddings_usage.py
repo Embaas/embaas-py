@@ -11,7 +11,7 @@ from ..core.datetime_utils import serialize_datetime
 class DocumentWithEmbeddingsUsage(pydantic.BaseModel):
     prompt_tokens: int
     total_tokens: int
-    completion_tokens: typing.Optional[int]
+    completion_tokens: typing.Optional[int] = None
     total_mb: float
 
     def json(self, **kwargs: typing.Any) -> str:

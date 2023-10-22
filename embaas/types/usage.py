@@ -9,7 +9,7 @@ from ..core.datetime_utils import serialize_datetime
 class Usage(pydantic.BaseModel):
     prompt_tokens: int
     total_tokens: int
-    completion_tokens: typing.Optional[int]
+    completion_tokens: typing.Optional[int] = None
 
     def json(self, **kwargs: typing.Any) -> str:
         kwargs_with_defaults: typing.Any = {"by_alias": True, "exclude_unset": True, **kwargs}
